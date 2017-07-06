@@ -11,6 +11,12 @@
       return $app["twig"]->render("scrabble.html.twig");
     });
 
+    $app->get("/results", function() use ($app) {
+        $scrabble = new ScrabbleScore();
+        $results = $scrabble->scrabbleScoreKeeper($_GET["user_input"]);
+        return $app["twig"]->render("results.html.twig", array("score" => $results));
+    });
+
     return $app;
 
 
