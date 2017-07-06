@@ -19,11 +19,11 @@
         function testScrabbleScoreSingleChar()
         {
             $test_ScrabbleScore = new ScrabbleScore;
-            $input = "k";
+            $input = "z";
 
             $result = $test_ScrabbleScore->scrabbleScoreKeeper($input);
 
-            $this->assertEquals("Your score is: 5", $result);
+            $this->assertEquals("10", $result);
         }
     }
 ?>
