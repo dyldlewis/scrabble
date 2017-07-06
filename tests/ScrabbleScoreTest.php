@@ -15,5 +15,15 @@
             //Assert
             $this->assertEquals("Please enter letters only!", $result);
         }
+
+        function testScrabbleScoreSingleChar()
+        {
+            $test_ScrabbleScore = new ScrabbleScore;
+            $input = "k";
+
+            $result = $test_ScrabbleScore->scrabbleScoreKeeper($input);
+
+            $this->assertEquals("Your score is: 5", $result);
+        }
     }
 ?>
