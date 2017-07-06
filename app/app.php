@@ -13,8 +13,10 @@
 
     $app->get("/results", function() use ($app) {
         $scrabble = new ScrabbleScore();
-        $results = $scrabble->scrabbleScoreKeeper($_GET["user_input"]);
-        return $app["twig"]->render("results.html.twig", array("score" => $results));
+        $user_input = $_GET["user_input"];
+        $results = $scrabble->scrabbleScoreKeeper($user_input);
+
+        return $app["twig"]->render("results.html.twig", array("score" => $results, "word" => $user_input));
     });
 
     return $app;
