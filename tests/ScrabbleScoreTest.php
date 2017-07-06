@@ -16,14 +16,24 @@
             $this->assertEquals("Please enter letters only!", $result);
         }
 
-        function testScrabbleScoreSingleChar()
+        function testScrabbleScoreKeeperSingleChar()
         {
             $test_ScrabbleScore = new ScrabbleScore;
-            $input = "z";
+            $input = "j";
 
             $result = $test_ScrabbleScore->scrabbleScoreKeeper($input);
 
-            $this->assertEquals("10", $result);
+            $this->assertEquals("8", $result);
+        }
+
+        function testScrabbleScoreKeeperMultiChar()
+        {
+            $test_ScrabbleScore = new ScrabbleScore;
+            $input = "cat";
+
+            $result = $test_ScrabbleScore->scrabbleScoreKeeper($input);
+
+            $this->assertEquals("5", $result);
         }
     }
 ?>
